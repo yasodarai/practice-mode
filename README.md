@@ -1,7 +1,9 @@
 # practice-mode
 SELECT * FROM tutorial.crunchbase_companies_clean_date;
+
 select cast(funding_total_usd as varchar), founded_at_clean::varchar AS founded_at_string
 FROM tutorial.crunchbase_companies_clean_date;
+
 SELECT CAST(funding_total_usd AS varchar),cast(founded_at_clean AS varchar)
   
   FROM tutorial.crunchbase_companies_clean_date;
@@ -15,6 +17,7 @@ SELECT CAST(funding_total_usd AS varchar),cast(founded_at_clean AS varchar)
   JOIN tutorial.crunchbase_acquisitions_clean_date acquisitions
     ON acquisitions.company_permalink = companies.permalink
  WHERE founded_at_clean IS NOT NULL;
+ 
  SELECT companies.permalink,
        companies.founded_at_clean,
        companies.founded_at_clean::timestamp +
